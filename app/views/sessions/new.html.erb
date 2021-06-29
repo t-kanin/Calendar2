@@ -1,0 +1,19 @@
+<h1>Log In </h1>
+
+<%= form_with url: session_path do |form| %> 
+     <div class='field'>
+        <%= form.label :email %>
+        <%= form.email_field :email %>
+    </div>
+
+    <div class='field'>
+        <%= form.label :password %>
+        <%= form.password_field :password %>
+    </div> 
+
+    <!-- after submit takes the user to the create action in session controller --> 
+    <div class='actions'>
+        <%= form.submit 'Log In' %> 
+    </div> 
+<% end %> 
+
