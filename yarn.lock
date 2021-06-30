@@ -885,6 +885,11 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@fortawesome/fontawesome-free@^5.15.3":
+  version "5.15.3"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.15.3.tgz#c36ffa64a2a239bf948541a97b6ae8d729e09a9a"
+  integrity sha512-rFnSUN/QOtnOAgqFRooTA3H57JLDm0QEG/jPdk+tLQNL/eWd+Aok8g3qCI+Q1xuDPWpGW/i9JySpJVsq8Q0s9w==
+
 "@fullcalendar/common@~5.8.0":
   version "5.8.0"
   resolved "https://registry.yarnpkg.com/@fullcalendar/common/-/common-5.8.0.tgz#43e79e26e6347af83baaa603157aced67e23d549"
@@ -913,6 +918,14 @@
   version "5.8.0"
   resolved "https://registry.yarnpkg.com/@fullcalendar/interaction/-/interaction-5.8.0.tgz#1661682f4df7b076b36fedf2fc9b33a03f04bf07"
   integrity sha512-ocOCS5g1AT06uR3OeKpN2WKJO4BLmnUZn/v2H/iPllbC7MwYBSy/obC4CoQqnK93FyJXUOFH1KfLwTK013C1+w==
+  dependencies:
+    "@fullcalendar/common" "~5.8.0"
+    tslib "^2.1.0"
+
+"@fullcalendar/list@^5.8.0":
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/list/-/list-5.8.0.tgz#703290784d860133abaa9176bdf66383f7c7ef9f"
+  integrity sha512-JlqXbWq8Gl2BMx1mOAeEWakW43xDYypBBjwKztnax5tOB5Sfty8chVmeG7ffz2NFtvg2c1nj6MP/zGrVCYY0RA==
   dependencies:
     "@fullcalendar/common" "~5.8.0"
     tslib "^2.1.0"
@@ -1555,6 +1568,11 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
+
+bootstrap@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.0.2.tgz#aff23d5e0e03c31255ad437530ee6556e78e728e"
+  integrity sha512-1Ge963tyEQWJJ+8qtXFU6wgmAVj9gweEjibUdbmcCEYsn38tVwRk8107rk2vzt6cfQcRr3SlZ8aQBqaD8aqf+Q==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
