@@ -3,7 +3,8 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
-    @events = Event.all
+    #@events = Event.all
+    @events = current_user.events
   end
 
   # GET /events/1 or /events/1.json
@@ -12,7 +13,8 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    @event = Event.new
+    #@event = Event.new
+    @event = current_user.events.build
   end
 
   # GET /events/1/edit
@@ -21,8 +23,9 @@ class EventsController < ApplicationController
 
   # POST /events or /events.json
   def create
-    @event = Event.new(event_params)
-
+    @event = current_user.events.new(event_params)
+    #@event = Event.new(event_params)
+    #@event = current_user.events.build(event_params)
     respond_to do |format|
       if @event.save
         format.html { redirect_to root_path, notice: "Event was successfully created." }
@@ -66,10 +69,6 @@ class EventsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def event_params
       Rails.logger.info("PARAMS: #{params.inspect}")
-      params.require(:event).permit(:all_day, :start_time, :end_time, :title)
+      params.require(:event).permit(:all_day, :start_time, :end_time, :title, :user_id)
     end
-    
-    def event_params_put
-      params.permit(:all_day, :start_time, :end_time, :title, :id)
-    end 
 end

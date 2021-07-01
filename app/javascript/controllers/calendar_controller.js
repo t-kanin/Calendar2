@@ -63,6 +63,7 @@ export default class extends Controller {
           Rails.ajax({
             type: 'PUT',
             url: 'http://127.0.0.1:3000/events/5',
+            contentType: 'application/json',
             data:{
               'event':{
                 start_time: info.event.start, 

@@ -8,8 +8,8 @@ class UsersController < ApplicationController
         @user = User.new(signup_params)
         if @user.save 
             session[:user_id] = @user.id
-            # can do mail job like email confirmation ?? 
-            redirect_to root_path, notice: "Sign up successfully"
+            # add eamil confirmation
+            redirect_to root_path #, notice: "Sign up successfully"
         else 
             render :new
         end 
