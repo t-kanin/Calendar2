@@ -61,12 +61,12 @@ export default class extends Controller {
           console.log(JSON.stringify(mydata))
           //events/5.json?start=2021-06-27T00%3A00%3A00%2B07%3A00&end=2021-08-08T00%3A00%3A00%2B07%3A00
           Rails.ajax({
-            type: 'POST',
-            url: 'http://127.0.0.1:3000/events/5', //info.event.url, ///events/6
+            type: 'PUT',
+            url: 'http://127.0.0.1:3000/events/5',
             data:{
-              event:{
-                start_time: '2021:10:06', 
-                end_time: '2021:10:06' 
+              'event':{
+                start_time: info.event.start, 
+                end_time: info.event.start 
               }
             },//JSON.stringify(data)}, //  {"event": data},   //new URLSearchParams(data).toString 
           })
