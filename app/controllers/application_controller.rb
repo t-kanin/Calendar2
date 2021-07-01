@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
     def authenticate_user! 
         return if user_signed_in? 
-        redirect_to new_session_path, alert: 'You must sign in first'
+        redirect_to new_session_path #alert: 'You must sign in first'
     end 
 
     def current_user 
