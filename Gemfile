@@ -25,6 +25,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Bootstrap 
 
+gem 'bootstrap'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

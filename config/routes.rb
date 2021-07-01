@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :events
-  get 'welcome/index'
+  post 'events/5', to: 'events#create'
   # new for allowing the user to sign up and create to create the users
   resources :users, only: [:new, :create] 
   # new for the login link, create handle the auth and destroy for logout 

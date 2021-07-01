@@ -1,3 +1,35 @@
 <div data-controller="calendar">
-  <div data-calendar-target="calendar"></div>
+    <div class ="modal" data-calendar-target = "modal">
+        <div class ="modal-dialog" role = "document">
+            <div class ="modal-content">
+                <%= form_with model: Event.new, local: true do |form|%>
+                    <div class = "modal-body">
+                        <div class="field">
+                            <%= form.label :all_day %>
+                            <%= form.check_box :all_day %>
+                        </div>
+
+                        <div class="field">
+                            <%= form.label :start_time %>
+                            <%= form.datetime_select :start_time, data: {target: 'calendar.start_time'}%>
+                        </div>
+
+                        <div class="field">
+                            <%= form.label :end_time %>
+                            <%= form.datetime_select :end_time, data: {target: 'calendar.end_time'}%>
+                        </div>
+
+                        <div class="field">
+                            <%= form.label :title %>
+                            <%= form.text_field :title %>
+                        </div>
+                    </div>
+                    <div class = "modal-footer">
+                        <%= form.submit class: 'btn btn-primary'%>
+                    </div>
+                <%end%>
+            </div>
+        </div>
+    </div>
+    <div data-calendar-target="calendar"></div>
 </div>
