@@ -1,7 +1,14 @@
+html{
+  height: 100%;
+}
+
 body {
   background-color: #fff;
   color: #333;
   margin: 33px; 
+  max-width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
 body, p, ol, ul, td {
