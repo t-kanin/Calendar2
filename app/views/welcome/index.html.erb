@@ -1,8 +1,11 @@
 <div data-controller="calendar">
-    <div class ="modal" data-calendar-target = "modal">
+    <%= content_tag :div, class: 'modal', data: { target: 'calendar.modal' } do %>
         <div class ="modal-dialog" role = "document">
             <div class ="modal-content">
                 <%= form_with model: Event.new, local: true do |form|%>
+                    <div class ="modal-header">
+                        <h5 class = "modal-title">Create Event</h5>
+                    </div>
                     <div class = "modal-body">
                         <div class="field">
                             <%= form.label :all_day %>
@@ -25,11 +28,12 @@
                         </div>
                     </div>
                     <div class = "modal-footer">
+                        <%= link_to "Cancel", root_path, {:class=>"btn btn-danger"} %>
                         <%= form.submit class: 'btn btn-primary'%>
                     </div>
                 <%end%>
             </div>
         </div>
-    </div>
+    <%end%>
     <div data-calendar-target="calendar"></div>
 </div>

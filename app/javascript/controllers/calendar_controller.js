@@ -55,17 +55,20 @@ export default class extends Controller {
         eventResize: function(info){
           let data = _this.data(info)
           let mydata = {
-            "event": 
-            {"start":new Date(info.event.start).toUTCString(), "end":new Date(info.event.end).toUTCString()}
+            "event":{
+              start_time: info.event.start, 
+              end_time: info.event.start 
+            }
           }
-          console.log(JSON.stringify(mydata))
+
+          console.log(mydata)
           //events/5.json?start=2021-06-27T00%3A00%3A00%2B07%3A00&end=2021-08-08T00%3A00%3A00%2B07%3A00
           Rails.ajax({
             type: 'PUT',
-            url: 'http://127.0.0.1:3000/events/5',
+            url: 'events/13',//info.event.url,
             contentType: 'application/json',
             data:{
-              'event':{
+              "event":{
                 start_time: info.event.start, 
                 end_time: info.event.start 
               }
