@@ -28,6 +28,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 5.0.1'
 gem 'jquery-rails'
 
+gem 'sidekiq'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
