@@ -13,4 +13,6 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-
+Notification.requestPermission().then(function (result){
+    
+})
