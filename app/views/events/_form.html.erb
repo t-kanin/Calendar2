@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="mb-3">
     <%= form.label :all_day %>
-    <%= form.check_box :all_day %>
+    <%= form.check_box :all_day , class: "form-check"%>
   </div>
 
-  <div class="field">
+  <div class="mb-3">
     <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
+    <%= form.datetime_select :start_time , class: "form-control"%>
   </div>
 
-  <div class="field">
+  <div class="mb-3">
     <%= form.label :end_time %>
-    <%= form.datetime_select :end_time %>
+    <%= form.datetime_select :end_time , class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="mb-3">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title , class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="mb-3">
+    <%= form.submit 'Edit event' , class: "btn btn-primary" %>
   </div>
 <% end %>
