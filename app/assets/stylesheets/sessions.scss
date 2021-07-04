@@ -7,7 +7,6 @@ body {
     font-family: Nunito Sans;
     background-color: #add8e6;
     margin: 0; }
-  
   .center-item {
     display: flex;
     justify-content: center;
@@ -62,6 +61,9 @@ body {
       .center-item form p {
         font-size: 14px; } }
   
+  #checkbox{
+    float: left;
+  }
   /*# sourceMappingURL=style.css.map */
   
   

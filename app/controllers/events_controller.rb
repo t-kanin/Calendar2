@@ -17,7 +17,7 @@ class EventsController < ApplicationController
     @event = current_user.events.build
   end
 
-  # GET /events/1/edit
+  # GET /events/1/edit 
   def edit
   end
 

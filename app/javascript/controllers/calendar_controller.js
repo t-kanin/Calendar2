@@ -20,6 +20,7 @@ export default class extends Controller {
         // get events from the url http://127.0.0.1:3000/events.json
         // However the events will not display yet because the format in events.json does not match the fullcalendar framework
         // 'start_time' and 'end_time' need to be renamed to 'start' and 'end'
+        timeZone: 'UTC',
         events: '/events.json', 
         editable: true,
         plugins: [dayGridPlugin, timeGridPlugin,listPlugin, interactionPlugin],
