@@ -7,7 +7,7 @@ class HardWorker
     puts("start worker perfrom someting")
     events = Event.all 
     # boardcast to the users before the meeting  
-    #ActionCable.server.broadcast('notification_channel', 'upcomning event in 5 min utes ')
+    ActionCable.server.broadcast('notification_channel', 'upcomning event in 5 min utes ')
     events.each do |event|
       # puts("start: #{event.start_time}, 5 min before: #{Time.now - 5.minutes}")
       time_diff  =  (Time.now - event.start_time)/1.minute  % 60 
