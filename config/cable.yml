@@ -9,6 +9,7 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:39672634282905d0aa7d627cd61b527d@scat.redistogo.com:10455
+  url: <%= ENV["REDIS_URL"] %>
+  #url: redis://:p0c67a76b9c3dcfad9dd64b4c5c407789934210476000cc36b0017228a27d9783@ec2-34-232-97-96.compute-1.amazonaws.com:15869
   #url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: Calendar_2_production
+  #channel_prefix: Calendar_2_production
