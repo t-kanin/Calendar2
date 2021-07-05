@@ -1,5 +1,9 @@
 <ul class="nav justify-content-end">
+
     <% if user_signed_in? %> 
+        <li class = "nav-item">
+            <%= link_to 'Home', root_path, class: "nav-link Home"%>
+        </li>
         <li class ="nav-item">
             <%= link_to 'Logout', session_path, class: "nav-link logout" , method: :delete %>
         </li>

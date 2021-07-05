@@ -20,5 +20,5 @@
   <%= @event.title %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Edit', edit_event_path(@event), data: {toggle:"modal", target: 'modal'}%> |
 <%= link_to 'Back', root_path %>

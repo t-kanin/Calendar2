@@ -1,5 +1,8 @@
+require 'sidekiq/web'
+require 'sidekiq-scheduler/web'
+
 Rails.application.routes.draw do
-  resources :events
+  resources :events 
   #post 'events/5', to: 'events#create'
   # new for allowing the user to sign up and create to create the users
   resources :users, only: [:new, :create] 
@@ -10,4 +13,5 @@ Rails.application.routes.draw do
   #For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   mount ActionCable.server, at: '/cable'
-end
+  mount Sidekiq::Web => '/sidekiq'
+end 

@@ -4,4 +4,5 @@ class Event < ApplicationRecord
     #after_save_commit do 
     #    ReminderJob.set(wait_until: Time.now).perform_later(self)
     #end 
+
 end

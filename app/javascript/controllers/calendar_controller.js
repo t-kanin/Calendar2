@@ -20,7 +20,8 @@ export default class extends Controller {
         // get events from the url http://127.0.0.1:3000/events.json
         // However the events will not display yet because the format in events.json does not match the fullcalendar framework
         // 'start_time' and 'end_time' need to be renamed to 'start' and 'end'
-        timeZone: 'UTC',
+        themeSystem: 'Lumen',
+        timeZone: 'Asia/Bangkok', // UTC
         events: '/events.json', 
         editable: true,
         plugins: [dayGridPlugin, timeGridPlugin,listPlugin, interactionPlugin],
@@ -49,7 +50,7 @@ export default class extends Controller {
         // resize the event on calendar 
         eventResize: function(info){
           let data = _this.data(info)
-          updateEvent(data, info,event.url)
+          updateEvent(data, info.event.url)
         },
 
       })
