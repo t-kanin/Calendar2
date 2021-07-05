@@ -3,18 +3,15 @@ class HardWorker
 
   def perform(*args)
     # Do something
-    # check event.start_time < time.now - 5.minutes
-    puts("start worker perfrom someting")
     events = Event.all 
     # boardcast to the users before the meeting  
-    ActionCable.server.broadcast('notification_channel', 'upcomning event in 5 min utes ')
+    #ActionCable.server.broadcast('notification_channel', 'upcomning event in 5 minutes ')
     events.each do |event|
-      # puts("start: #{event.start_time}, 5 min before: #{Time.now - 5.minutes}")
-      time_diff  =  (Time.now - event.start_time)/1.minute  % 60 
+      time_diff = ((event.start_time - Time.now)/1.minute).round
       puts("time_diff :  #{time_diff}")
       if  time_diff >= 0 && time_diff <= 5 
-        puts(event.inspect)
-        puts("start time less than time now" ) 
+        body  =  "Less than 5 minute before the #{event.title} starts"
+        ActionCable.server.broadcast('notification_channel', body)
       end 
     end 
     # broadcast 
