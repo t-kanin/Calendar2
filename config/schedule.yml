@@ -1,4 +1,5 @@
 my_first_job:
-  cron: "*/1 * * * *"
+  # Perform process from hardworker class every 5 minutes
+  cron: "*/5 * * * *"
   class: "HardWorker"
   queue: "default" 
