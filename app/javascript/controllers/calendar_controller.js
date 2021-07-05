@@ -43,38 +43,13 @@ export default class extends Controller {
         // drag and drop event on calendar
         eventDrop: function(info){
           let data = _this.data(info)
-          //console.log(info.event.url) -> http://127.0.0.1:3000/events/5.json
-          console.log(new URLSearchParams(data).toString)
-          Rails.ajax({
-            type: 'PATCH',
-            url: info.event.url, 
-            data: new URLSearchParams(data).toString,
-          })
+          updateEvent(data, info.event.url)
         },
 
         // resize the event on calendar 
         eventResize: function(info){
           let data = _this.data(info)
-          let mydata = {
-            "event":{
-              start_time: info.event.start, 
-              end_time: info.event.start 
-            }
-          }
-
-          console.log(mydata)
-          //events/5.json?start=2021-06-27T00%3A00%3A00%2B07%3A00&end=2021-08-08T00%3A00%3A00%2B07%3A00
-          Rails.ajax({
-            type: 'PUT',
-            url: 'events/13',//info.event.url,
-            contentType: 'application/json',
-            data:{
-              "event":{
-                start_time: info.event.start, 
-                end_time: info.event.start 
-              }
-            },//JSON.stringify(data)}, //  {"event": data},   //new URLSearchParams(data).toString 
-          })
+          updateEvent(data, info,event.url)
         },
 
       })
@@ -91,4 +66,15 @@ export default class extends Controller {
         "event[end_time]": info.event.end,
       }
     }
+
+}
+
+function updateEvent(data, url){
+  //console.log(info.event.url) -> http://127.0.0.1:3000/events/5.json
+
+  Rails.ajax({
+    type: 'PATCH',
+    url:  url,  
+    data: new URLSearchParams(data).toString()
+  })
 }
