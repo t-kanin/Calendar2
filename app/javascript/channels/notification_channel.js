@@ -9,7 +9,7 @@ consumer.subscriptions.create("NotificationChannel", {
     // Called when the subscription has been terminated by the server
   },
 
-  received(data) {
+  received(data) { // up coming event in 5 minutes
     // Called when there's incoming data on the websocket for this channel
     if(Notification.permission === 'granted'){
       var title = 'Push notification' 
