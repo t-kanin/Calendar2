@@ -24,6 +24,7 @@ class EventsController < ApplicationController
   # POST /events or /events.json
   def create
     @event = current_user.events.new(event_params)
+
     respond_to do |format|
       if @event.save
         format.html { redirect_to root_path }

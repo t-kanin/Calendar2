@@ -1,8 +1,9 @@
 class Event < ApplicationRecord
     belongs_to :user
+    validate :end_date_before_start_date? 
 
-    #after_save_commit do 
-    #    ReminderJob.set(wait_until: Time.now).perform_later(self)
-    #end 
+    def end_date_before_start_date?
+        errors.add(:end_time, "cannot come before start date") if self.end_time < self.start_time
+    end
 
 end

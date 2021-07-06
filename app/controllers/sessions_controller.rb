@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
   def create 
     @user =User.find_by(email: params[:email])
     if @user.nil? 
-
       flash.now.alert = 'Email or password is invalid'
       render :new
     elsif @user.authenticate(params[:password])
