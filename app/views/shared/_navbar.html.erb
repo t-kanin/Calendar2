@@ -2,10 +2,16 @@
 
     <% if user_signed_in? %> 
         <li class = "nav-item">
-            <%= link_to 'Home', root_path, class: "nav-link Home"%>
+            <%= link_to 'Home', root_path, class: "nav-link"%> 
+        </li>
+        <li class = "nav-item">
+            <%= link_to 'Event', events_path, class: "nav-link"%> 
+        </li>
+        <li class = "nav-item">
+            <%= link_to 'Export', events_path(format: "csv"), class: "nav-link"%> 
         </li>
         <li class ="nav-item">
-            <%= link_to 'Logout', session_path, class: "nav-link logout" , method: :delete %>
+            <%= link_to 'Logout', session_path, class: "btn btn-danger logout" , method: :delete %>
         </li>
     <%end%>
 </ul>

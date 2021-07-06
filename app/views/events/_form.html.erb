@@ -1,46 +1,47 @@
 <div class = "center-item" >
-
   <%= form_with(model: event) do |form| %>
-    <% if event.errors.any? %>
-      <div id="error_explanation">
-        <ul>
-          <% event.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
+      <% if event.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+            <% event.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-check">
+        <%= form.label :all_day, class: "form-check-label"%> 
+        <%= form.check_box :all_day , class: "form-check-input"%>
       </div>
-    <% end %>
 
-    <div class="form-check">
-      <%= form.label :all_day, class: "form-check-label"%>
-      <%= form.check_box :all_day , class: "form-check-input"%>
-    </div>
+      <div class="mb-3">
+        <%= form.label :start_time, class: "form-label"%> <br>
+        <%= form.datetime_select :start_time , class: "form-control"%>
+      </div>
 
-    <div class="mb-3">
-      <%= form.label :start_time %>
-      <%= form.datetime_select :start_time , class: "form-control"%>
-    </div>
-
-    <div class="mb-3">
-      <%= form.label :end_time %>
-      <%= form.datetime_select :end_time , class: "form-control" %>
-    </div>
-
-    <div class="mb-3">
-      <%= form.label :title %>
-      <%= form.text_field :title , class: "form-control" %>
-    </div>
-    
-    <div class="mb-3">
-      <div class = "row">
-        <div class = "col">
-          <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </div class>
-        <div class = "col">
-          <%= form.submit 'Edit event' , class: "btn btn-primary" %>
-        </div class>
+      <div class="mb-3">
+        <%= form.label :end_time, 'End time' , class: "form-label"%> <br>
+        <%= form.datetime_select :end_time, class: "form-control" %>
+      </div>
+      
+      <div class="mb-3">
+        <div class = "row">
+            <div class = "col-sm-4 ">
+              <%= form.label :title, class: "form-label" %>
+              <%= form.text_field :title , class: "form-control" %>
+            </div>
+        </div>
+      </div>
+      
+      <div class="mb-3">
+        <div class = "row">
+          <div class = "col">
+            <%= form.submit 'Submit' , class: "btn btn-primary" %>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>
-
+  
 </div>

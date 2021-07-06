@@ -5,7 +5,13 @@ class EventsController < ApplicationController
   def index
     #@events = Event.all
     @events = current_user.events
+    respond_to do |format|
+      format.html 
+      format.json
+      format.csv{send_data @events.to_csv}
+    end 
   end
+
 
   # GET /events/1 or /events/1.json
   def show
@@ -58,7 +64,6 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
 
   private
     # Use callbacks to share common setup or constraints between actions.

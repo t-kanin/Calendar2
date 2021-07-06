@@ -64,7 +64,7 @@ export default class extends Controller {
     data(info){
       return{
         "event[start_time]": info.event.start,
-        "event[end_time]": info.event.end,
+        "event[end_time]": info.event.end || info.event.start,
       }
     }
 
